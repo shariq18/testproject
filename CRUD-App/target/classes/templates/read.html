@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Student Data</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="row">
+		<div class="col-sm-6 col-sm-push-3">
+			<div class="jumbotron" style="padding:50px;">
+				<h2>Student Data</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Roll No</th>
+							<th>Course</th>
+						</tr>
+					</thead>
+					<tbody th:each="stu : ${stuList}">
+						<tr>
+							<td th:text=${stu.sname}></td>
+							<td th:text=${stu.rollno}></td>
+							<td th:text=${stu.course}></td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="/home">Click Here</a> to go to HomePage!
+			</div>
+		</div>
+	</div>
+</body>
+</html>
